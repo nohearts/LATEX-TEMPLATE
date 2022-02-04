@@ -1,0 +1,35 @@
+\newcommand{\thetitle}{\todo{title}}
+\newcommand{\theauthor}{\todo{author}}
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{template}[Template Package for Documents]
+
+\usepackage[german]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{blindtext}
+\usepackage{float}
+\usepackage{csquotes}
+
+\newcommand{\thedate}{\date{\today}}
+\newcommand{\todo}[1]{\colorbox{Yellow}{#1}}
+\newcommand{\Start}{\maketitle\newpage\tableofcontents\newpage\listoffigures\listoftables}
+\newcommand{\End}{\newpage\bibliographystyle{unsrt}\bibliography{bibliography.bib}}
+\newcommand{\Section}[1]{\newpage\section{#1}}
+\newcommand{\Subsection}[1]{\subsection{#1}}
+\newcommand{\Subsubsection}[1]{\subsubsection{#1}}
+
+\title{\thetitle}
+\author{\theauthor}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Seite \thepage}
+\lhead{\thedate}
+\chead{\thetitle}
+\cfoot{\theauthor}
